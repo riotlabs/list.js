@@ -82,7 +82,7 @@ module.exports = function(list) {
   return function(options) {
     var pagingList = new List(list.listContainer.id, {
       listClass: options.paginationClass || 'pagination',
-      item: "<li class='page-item'><a class='page-link' href='#'></a></li>",
+      item: "<li class='page-item'><a class='page-link' href='#reviewTop'></a></li>",
       valueNames: ['page-link', 'dotted'],
       searchClass: 'pagination-search-that-is-not-supposed-to-exist',
       sortClass: 'pagination-sort-that-is-not-supposed-to-exist'
@@ -92,7 +92,7 @@ module.exports = function(list) {
       var target = e.target || e.srcElement
         , page = list.utils.getAttribute(target, 'data-page')
         , i = list.utils.getAttribute(target, 'data-i');
-      if(i){      
+      if(i){
         list.show((i-1)*page + 1, page);
       }
     });
